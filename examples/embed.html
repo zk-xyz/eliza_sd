@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sober Dad - Embedded Chatbot Example</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        header {
+            background-color: #3B82F6;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .content {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .chatbot-container {
+            flex: 1;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .chatbot {
+            width: 100%;
+            max-width: 400px;
+            height: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: none;
+        }
+        
+        h1, h2 {
+            color: #3B82F6;
+        }
+        
+        p {
+            line-height: 1.6;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: #3B82F6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+        
+        .button:hover {
+            background-color: #2563EB;
+        }
+        
+        footer {
+            background-color: #1F2937;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sober Dad</h1>
+        <p>Support for parents navigating sobriety while raising children</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Welcome to Sober Dad</h2>
+            <p>A community dedicated to supporting parents in recovery as they navigate the challenges and joys of raising children while maintaining sobriety.</p>
+        </section>
+        
+        <section class="content">
+            <div class="text-content">
+                <h2>How Can We Help?</h2>
+                <p>Parenting is challenging enough on its own. Adding recovery to the mix can sometimes feel overwhelming. That's why we've created resources specifically for parents in recovery.</p>
+                
+                <p>Our community offers:</p>
+                <ul>
+                    <li>Support groups specifically for parents</li>
+                    <li>Resources for explaining recovery to children</li>
+                    <li>Strategies for managing stress without substances</li>
+                    <li>Tips for building healthy family dynamics</li>
+                    <li>Guidance for navigating social situations</li>
+                </ul>
+                
+                <p>Whether you're newly sober or have years of recovery, we're here to support your journey as a parent.</p>
+                
+                <a href="#" class="button">Join Our Community</a>
+            </div>
+            
+            <div class="chatbot-container">
+                <h2>Chat with Sober Dad</h2>
+                <p>Have questions? Need support? Chat with our Sober Dad AI assistant.</p>
+                
+                <!-- Chatbot iframe - Replace the src with your actual deployed client URL -->
+                <iframe 
+                    src="https://sober-dad-client.onrender.com" 
+                    class="chatbot"
+                    title="Sober Dad Chatbot"
+                    frameborder="0"
+                    allow="microphone"
+                ></iframe>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Sober Dad. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,44 @@
+services:
+  - type: web
+    name: sober-dad-agent
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: 0.0.0.0
+      - key: SERVICE_TYPE
+        value: agent
+      - key: ANTHROPIC_API_KEY
+        sync: false
+    buildCommand: pnpm install && pnpm build
+    startCommand: pnpm start --character=characters/sober_dad.character.json
+    healthCheckPath: /health
+    autoDeploy: true
+    disk:
+      name: eliza-data
+      mountPath: /app/data
+      sizeGB: 1
+
+  - type: web
+    name: sober-dad-client
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: 0.0.0.0
+      - key: SERVICE_TYPE
+        value: client
+      - key: VITE_SERVER_URL
+        value: https://sober-dad-agent.onrender.com
+    buildCommand: pnpm install && pnpm build
+    startCommand: cd client && pnpm exec vite preview --host "0.0.0.0" --port 10000 --strictPort true
+    healthCheckPath: /
+    autoDeploy: true 
